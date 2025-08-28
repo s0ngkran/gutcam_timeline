@@ -1,1 +1,1 @@
-[View diagram](./timeline.mmd)
+[View GutCam Timeline](./timeline.mmd)

@@ -1,20 +1,50 @@
 gantt
     dateFormat  YYYY-MM-D
     title       GutCam Timeline
+    axisFormat  %-d%b
+    tickInterval 1week
 
-    section Product
-    start                                :milestone, start, 2025-10-1, 0d
+    section Initiation
+    invite founders                      :invitefounder, 2025-09-1, until founder
+    last week, invite founders           :lastweek, 2025-09-15, until founder
+    summarize founders 22sep             :milestone, founder, 2025-09-22, 0d
+    dev plan and timeline                :plan, after founder, until start
+
+    section Product Development
+    officially start this project        :milestone, start, 2025-10-1, 0d
+    dev POC                              :dev_poc, after start, 30d
     dev basic connection                 :dev1, after start, 15d
-    first meet hardware and software     :milestone, meet
-    dev POC                              :dev2, after meet, 15d
-    POC ready                            :milestone, after dev2
-    dev Prototype                        :devpro, after dev2, 15d
-    Prototype                            :milestone, after devpro
+    first meet hardware and software     :milestone, firstmeet, after dev1, 0d
+    app's wireframe                      :wireframe, after firstmeet, 7d
+    app's ui design                      :ui, after wireframe, 14d     
+    POC (1-2 devices)                    :milestone, after dev_poc, 0d
+    dev Prototype                        :devpro, after dev_poc, 40d
+    try POC                              :try_poc, after dev_poc, 10d
+    summarize POC feedback               :sum_poc, after try_poc, 2d
+    Prototype (10-15 devices)            :milestone, after devpro, 0d
     dev MVP                              :devmvp, after devpro, until mvp
-    MVP                                  :milestone, mvp, 2026-1-20, 0d
+    try Prototype                        :trypro, after devpro, 14d
+    summarize Prototype feedback         :sumpro, after trypro, 2d
+    MVP 20jan (100-200 devices)          :milestone, mvp, 2026-1-25, 0d
     dev Version2                         :devv2, after mvp, until v2
-    Version2                             :milestone, v2, 2026-4-20, 0d
-    landing page                         :landing, after meet, 10d
+    Version2 20april                     :milestone, v2, 2026-4-25, 0d
 
     section Marketing
-    landing page                         :milestone, after meet, 10d
+    deep Interview                       :interview, 2025-09-1, until suminterview
+    summarize Interview Result           :suminterview, after firstmeet, 3d
+    define theme and story               :theme, after suminterview, 7d
+    new social accounts                  :newsocial, after theme, 3d
+    pre design landing page              :pre_landing, after dev_poc, until dev_landing
+    dev landing page and new facebook group for waitlist       :dev_landing, after sum_poc, 3d
+    waitlist                             :waitlist, after dev_landing, until landing_preorder
+    ready for pre-order                  :landing_preorder, after devpro, 10d
+    pre-order 1                          :preorder1, after landing_preorder, 25d
+    MVP lot 1                            :mvp1, after landing_preorder, until mvp
+    summarize pre-order 1                :milestone, sumpreorder1, after preorder1, 0d
+    pre-order 2                          :preorder2, after sumpreorder1, 25d
+    MVP lot 2                            :mvp2, after sumpreorder1, 40d
+    summarize pre-order 2                :milestone, sumpreorder2, after preorder2, 0d
+    pre-order 3                          :preorder3, after sumpreorder2, 25d
+    MVP lot 3                            :mvp3, after sumpreorder2, 40d
+    summarize pre-order 3                :milestone, sumpreorder3, after preorder3, 0d
+
