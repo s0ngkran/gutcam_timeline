@@ -1,0 +1,20 @@
+gantt
+    dateFormat  YYYY-MM-D
+    title       GutCam Timeline
+
+    section Product
+    start                                :milestone, start, 2025-10-1, 0d
+    dev basic connection                 :dev1, after start, 15d
+    first meet hardware and software     :milestone, meet
+    dev POC                              :dev2, after meet, 15d
+    POC ready                            :milestone, after dev2
+    dev Prototype                        :devpro, after dev2, 15d
+    Prototype                            :milestone, after devpro
+    dev MVP                              :devmvp, after devpro, until mvp
+    MVP                                  :milestone, mvp, 2026-1-20, 0d
+    dev Version2                         :devv2, after mvp, until v2
+    Version2                             :milestone, v2, 2026-4-20, 0d
+    landing page                         :landing, after meet, 10d
+
+    section Marketing
+    landing page                         :milestone, after meet, 10d
